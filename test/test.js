@@ -1,4 +1,4 @@
-/*var request = require('supertest');
+var request = require('supertest');
 var app = require('../index.js');
 describe('GET /', function() {
  it('respond with hello world', function(done) {
@@ -6,4 +6,4 @@ describe('GET /', function() {
  request(app).get('/').expect('hello world', done);
  });
  app.stop();
-});*/
+});

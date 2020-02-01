@@ -1,5 +1,7 @@
-var request = require('supertest');
-var app = require('../index.js');
+var app = require('../index.js'),
+  chai = require('chai'),
+  request = require('supertest');
+var expect = chai.expect;
 
 describe('GET /', function () {
   it('respond with 200 and text content-type', function (done) {
@@ -13,12 +15,12 @@ describe('GET /', function () {
 describe('GET /', function() {
  it('respond with Hello World', function(done) {
  request(app)
-    .get('/test')
-    .expect('Hello World', done);
-    /*.expect(function(res) {
-        res.body.id = 'some fixed id';
-        res.body.name = res.body.name.toLowerCase();
-      }, done);*/
+    .get('/')
+      .end(function(err, res) { 
+        expect(res.statusCode).to.equal(200); 
+        expect(res.text.indexOf('Hello World')).to.not.equal(-1); 
+        done(); 
+      });
  });
  
  app.stop();

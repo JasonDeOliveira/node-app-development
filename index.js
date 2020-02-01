@@ -13,5 +13,15 @@ var app = express()
     server.close();
   }
 
+var time = new Date().getHours();
+var test = 0;
+if (time < 20) {
+  test=1;
+}
+else
+{
+  test=2;
+}
+
 module.exports = server;
 module.exports.stop = stop;

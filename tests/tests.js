@@ -18,7 +18,7 @@ describe('GET /', function() {
     .get('/')
       .end(function(err, res) { 
         expect(res.statusCode).to.equal(200); 
-        expect(res.text.indexOf('Hello World2')).to.not.equal(-1); 
+        expect(res.text.indexOf('Hello World')).to.not.equal(-1); 
         done(); 
       });
  });

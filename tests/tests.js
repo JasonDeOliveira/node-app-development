@@ -15,6 +15,10 @@ describe('GET /', function() {
  request(app)
     .get('/test')
     .expect('Hello World', done);
+    /*.expect(function(res) {
+        res.body.id = 'some fixed id';
+        res.body.name = res.body.name.toLowerCase();
+      }, done);*/
  });
  
  app.stop();
